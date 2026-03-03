@@ -19,6 +19,12 @@ spring:
       hibernate:
         format_sql: true
 
+  # This will help to insert the data.sql data if tables are empty, though it will run everytime but data.sql script wil insert 
+  # only if data is not present.
+  sql:
+    init:
+      mode: always
+
 eureka:
   instance:
     prefer-ip-address: true
