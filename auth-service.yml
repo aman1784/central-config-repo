@@ -10,6 +10,12 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # This will help to insert the data.sql data if tables are empty, though it will run everytime but data.sql script wil insert 
+  # only if data is not present.
+  sql:
+    init:
+      mode: always
     
   jpa:
     hibernate:
@@ -18,12 +24,12 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
-  # This will help to insert the data.sql data if tables are empty, though it will run everytime but data.sql script wil insert 
-  # only if data is not present.
-  sql:
-    init:
-      mode: always
+    defer-datasource-initialization: true 
+    # forces Spring Boot to follow this order:
+    # 1. Hibernate scans your User and Role entities.
+    # 2. Hibernate creates the users, roles, and user_roles tables in MySQL.
+    # 3. Then Spring Boot runs data.sql and inserts the data.
+  
 
 eureka:
   instance:
