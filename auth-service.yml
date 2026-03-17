@@ -39,4 +39,4 @@ eureka:
 jwt:
   secret: 50caab1114b4d2550f2713a933d9c58e2348f88e426a9e0cf8e954924b64f862
   expiration: 120000 # 2 mins
-  refresh-expiration: 86400000 # 1 days (Refresh Token)
+  refresh-expiration: 86400000 # 1 day (Refresh Token)
